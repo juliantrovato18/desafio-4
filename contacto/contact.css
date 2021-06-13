@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.form{
+  background-color: none;
+}
+.contact {
+  background-color: black;
+  min-width: 375px;
+  min-height: 1292px;
+}
+@media (min-width: 900px) {
+  .contact {
+    background: linear-gradient(
+      107.17deg,
+      #408195 29.35%,
+      rgba(0, 210, 135, 0.8) 78.73%
+    );
+  }
+}
+
+@media (min-width: 900px){
+  .form{
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.redes{
+  height: 530px;
+}
