@@ -11,9 +11,9 @@ function headerComponent(el) {
   <div class="ventana">
       <button class="cerrar-ventana">X</button>
       <div class="contiene__links">
-          <a class="header__links" href="">portfolio</a>
-          <a class="header__links" href="">servicios</a>
-          <a class="header__links" href="">contacto</a>
+          <a class="header__links" href="http://127.0.0.1:8080/portfolio/portfolio.html">portfolio</a>
+          <a class="header__links" href="http://127.0.0.1:8080/index.html">servicios</a>
+          <a class="header__links" href="http://127.0.0.1:8080/contacto/contact.html">contacto</a>
       </div>
   </div>
 

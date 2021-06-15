@@ -12,6 +12,10 @@ body{
   display: flex;
   flex-direction: row;
 }
+.nombre{
+  font-family: "Orbitron";
+  font-weight: 500;
+}
 @media(min-width:900px){
   .header{
       width: 100%;
