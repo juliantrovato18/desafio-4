@@ -4,5 +4,6 @@ function main() {
   footerComponent(document.querySelector(".contact__footer"));
   headerComponent(document.querySelector(".contact__header"));
   contacto();
+  abreVentana();
 }
 main();

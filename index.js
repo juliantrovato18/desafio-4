@@ -18,7 +18,6 @@ function getServices() {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       const fieldsCollection = data.items.map((item) => {
         let link = "";
         data.includes.Asset.filter((res)=>{
@@ -39,17 +38,7 @@ function getServices() {
     });
 }
 
-function abreVentana(){
-  const abreVentanaEl = document.querySelector(".abre-ventana");
-  const ventanaEl = document.querySelector(".ventana");
-  const cerrarVentanaEl = document.querySelector(".cerrar-ventana");
-  abreVentanaEl.addEventListener("click", (e)=>{
-      ventanaEl.style.display = "inherit";
-  });
-      cerrarVentanaEl.addEventListener("click", (e)=>{
-      ventanaEl.style.display = "";
-  })
-}
+
 
 function main() {
   getServices().then(function (services) {
@@ -58,13 +47,11 @@ function main() {
       
     }
   });
-
-  console.log(document.querySelector(".portfolio__header"));
   headerComponent(document.querySelector(".index__header"));
   formComponent(document.querySelector(".form"));
   footerComponent(document.querySelector(".index__redes"))
   abreVentana();
-  
+  contacto();
   
   
 }

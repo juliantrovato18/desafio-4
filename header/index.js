@@ -21,6 +21,18 @@ function headerComponent(el) {
 `;
 
   el.appendChild(componentEl);
-
  
+ 
+}
+
+function abreVentana(){
+  const abreVentanaEl = document.querySelector(".abre-ventana");
+  const ventanaEl = document.querySelector(".ventana");
+  const cerrarVentanaEl = document.querySelector(".cerrar-ventana");
+  abreVentanaEl.addEventListener("click", (e)=>{
+      ventanaEl.style.display = "inherit";
+  });
+      cerrarVentanaEl.addEventListener("click", (e)=>{
+      ventanaEl.style.display = "";
+  })
 }

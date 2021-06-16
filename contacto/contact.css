@@ -7,6 +7,14 @@ body {
 .form{
   background-color: none;
 }
+.form__title{
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+.label__ti{
+  font-family: "Poppins";
+  font-weight: 400;
+}
 .contact {
   background-color: black;
   min-width: 375px;

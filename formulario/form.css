@@ -37,6 +37,10 @@
 .label {
   color: white;
 }
+.label__ti{
+  font-family: "Montserrat";
+  font-weight: 700;
+}
 .fieldset {
   margin-bottom: 60px;
   margin-top: 20px;

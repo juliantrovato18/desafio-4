@@ -32,49 +32,50 @@ function formComponent(el) {
 
   
 }
+async function postData(url = '', data = {}) {
+    
+    const response = await fetch(url, {
+      method: 'POST', 
+      mode: 'cors', 
+      cache: 'no-cache', 
+      credentials: 'same-origin', 
+      headers: {
+        'Content-Type': 'application/json'
+        
+      },
+      redirect: 'follow', 
+      referrerPolicy: 'no-referrer', 
+      body: JSON.stringify(data) 
+    });
+    return response.json(); 
+  }
+
+
 
 function contacto(){
     const form = document.querySelector(".formulario")
     form.addEventListener("submit",(res)=>{
-        
         res.preventDefault();
-        let targ = res.target;
-        let nombre = targ.nombre.value;
-        let email = targ.email.value;
-        let textarea = targ.textarea.value;
-        console.log(nombre,email,textarea);
+        let objetoForm = res.target;
+        let nombre = objetoForm.nombre.value;
+        let email = objetoForm.email.value;
+        let textarea = objetoForm.textarea.value;
+        
         let mensaje = `nombre: ${nombre} 
         email: ${email}
         mensaje:${textarea}`
-        postData("https://apx-api.vercel.app/api/utils/dwf",{
-
+        
+        let datos = {
             "to":"julian.trovato@hotmail.com",
-       
             "message": mensaje
-            
-       
-       })
+        }
+        postData("https://apx-api.vercel.app/api/utils/dwf", datos).then(data =>{
+            console.log(data);
+        })
         
 
     });
 
 }
 
-// Ejemplo implementando el metodo POST:
-async function postData(url = '', data = {}) {
-    // Opciones por defecto estan marcadas con un *
-    const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
+
